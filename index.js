@@ -45,17 +45,22 @@ console.log((5316).toLocaleString('ar'));
 console.log(('44453').toLocaleString('ar'));
 
 //.toPrecision() can be used to round a number value to a set character count
-console.log((5.4).toPrecision(3));
+console.log((123456).toPrecision(5));
 console.log((5.5454).toPrecision(3));
 console.log((50.5454).toPrecision(3));
 console.log((500.5454).toPrecision(3));
 console.log((5000.5454).toPrecision(3));
 
-//.toString() converts a value, array or obj to a plain string
-let stringObj = new String('String');
-console.log(stringObj);
-console.log(stringObj.toString());
-console.log(num.toString(16));                       //.toString() can also convert to base 2-36, here its converting num to hex and outputting as a string
+//.toString() converts a value, array or obj to a plain string representing its contents
+//            toString outputs a base 16 string by default but this can be changed by changing the parameter 
+let eg1 = { num1: 1, num2: 2, num3: 3};
+let eg2 = (1, 2, 3);
+let eg3 = '1, 2, 3';
+let eg4 = 6;
+console.log(eg1.toString());
+console.log(eg2.toString());
+console.log(eg3.toString())
+console.log(eg4.toString(2))
 
 //string formatting functions
 let text1 = '           first-name      ';
@@ -85,12 +90,13 @@ example1('Im a Func');
 
 let example2 = function (x) {console.log(x);};
 example2('Im a Func');
+
 //anonymous functions
 (function (x) {console.log(x);})
     ('Im a Func too');
 
 (x => {console.log(x);})
-    ('So am I');;
+    ('So am I');
 
 //callback or high order function
 function callback1 (x) {
@@ -179,3 +185,4 @@ console.log(Object.is(this1.one, that1.one));       //is this1.one the same as t
 console.log(Object.is(this1.two, that1.two));       // is this1.two the same as that1.two
 console.log(Object.isFrozen(exObj));
 console.log(Object.isExtensible(exObj));
+
