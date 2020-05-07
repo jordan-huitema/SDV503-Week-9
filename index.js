@@ -143,11 +143,25 @@ let anotherStudent = {
     otherClass: 'CSA',
     school: 'MIT'
 };
-//Object.assign() assigns object/s to another object
-let newObj = Object.assign(students, anotherStudent);
+//Object.assign() assigns an object cloned properties of the param object
+let newObj = Object.assign(anotherStudent);
+console.log(anotherStudent)
 console.log(newObj);
 
-// Object.create()
+anotherStudent = { noStudents: 'None '}
+console.log(anotherStudent)
+console.log(newObj)
+
+//Object.create() sets an objects properties as anothers, as the others changes so does the assigned properties
+let otherObj = {}
+otherObj.something = { something: "gnihtemos" }
+newObj = Object.create(otherObj);
+console.log(otherObj.something)
+console.log(newObj.something)
+
+otherObj.something = { something: "something"}
+console.log(otherObj.something)
+console.log(newObj.something)
 
 // Object.is() checks if an obj is the same as another, this can also be used to check if an object is frozen
 let this1 = {
